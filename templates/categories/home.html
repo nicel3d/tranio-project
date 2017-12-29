@@ -1,0 +1,76 @@
+{% extends 'header.html' %}
+{% block header_title %}{{ title }}{% endblock %}
+{% block content %}
+
+    <div class="row c_tranino">
+        <div class="col-md-12 text-center">
+            <span>{{ title }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 c_tranino"></div>
+        <div class="col-md-9 c_tranino">
+            <span>Строка поиска:</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 c_tranino">
+            <span>Адресная строка: </span>
+            {% for item in breadcrumbs %}
+                <a href="/{{ item.0 }}/">{{ item.1|safe }}</a>
+            {% endfor %}
+            {{ cat.title }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 c_tranino">
+            <div class="row table">
+                <div class="c_tranino"><i>Категории: </i></div>
+                {% for catalog0 in catalog %}
+                    <div class="c_tranino">
+                        <a href="/{{ catalog0.url }}/">{{ catalog0.title|safe }}</a>
+                    </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-9 c_tranino">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-md-3 c_tranino prod">
+                        <div>Товар: {{ forloop.counter }}</div>
+                        <div class="text-center"><a href="/categories/{{ product.alias }}">{{ product.title|upper|safe }}</a></div>
+                        {% if product.image != Null and product.image != '' %}
+                            <div><img class="prod_img" src="{{ product.image.url }}" alt="{{ product.title }}"/></div>
+                        {% elif cat.image != Null and cat.image != '' %}
+                            <div><img class="prod_img" src="{{ cat.image.url }}" alt="{{ product.title }}"/></div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row text-right">
+                <div class="col-md-12">
+                    {% if count_products > 12 %}
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if products.has_previous %}
+                                    <a href="?page={{ products.previous_page_number }}"><u>&lt;&lt;&lt;назад</u></a>
+                                {% endif %}
+
+                                {% if products.has_next %}
+                                    <a href="?page={{ products.next_page_number }}"><u>вперед&gt;&gt;&gt;</u></a>
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="row">
+                            <!--<div class="col-md-12">
+                                Страница {{ products.number }} из {{ products.paginator.num_pages }}.
+                            </div>-->
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

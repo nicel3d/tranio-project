@@ -1,0 +1,27 @@
+body{
+    padding-top: 25px;
+    font-family: Verdana sans-serif;
+    font-size: 15.9402241594px;
+    font-weight: normal;
+}
+
+.table{
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 20px 0 20px 0;
+    border-collapse: collapse;
+}
+
+div.c_tranino+div.c_tranino{
+    /*border: none;*/
+}
+
+.c_tranino{
+    border: 1px solid black;
+}
+
+.c_tranino_category{
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}

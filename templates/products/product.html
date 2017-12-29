@@ -1,0 +1,6 @@
+{% extends 'header.html' %}
+{% block content %}
+    <h2 class="text-info">{{ shopproducts.title }}</h2>
+    <h6 class="text-info">{{ shopproducts.updated|date:"Y:m:d в h:i:s" }}</h6>
+    <p>{{ shopproducts.description|safe|linebreaks }}</p>
+{% endblock %}

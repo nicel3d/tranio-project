@@ -1,0 +1,49 @@
+{
+  "name": "fonts-classical",
+  "version": "1.0.3",
+  "homepage": "https://github.com/williamcanin/fonts-classical",
+  "authors": [
+    "William Canin <william.costa.canin@gmail.com>"
+  ],
+  "description": "Fonts Classical (Arial, Time New Roman, Verdana)",
+  "keywords": [
+    "fonts-classical",
+    "classical",
+    "webfonts",
+    "web",
+    "fonts"
+  ],
+  "main": [
+	"./src/css/fonts-classical.css",
+	"./css/fonts-classical.min.css",
+	"./fonts/arial/Arial.ttf",
+	"./fonts/times-new-roman/Times-New-Roman.ttf",
+	"./fonts/verdana/Verdana.ttf",
+  "./fonts/merriweather-fontface/Merriweather-Black.ttf",
+  "./fonts/merriweather-fontface/Merriweather-Bold.ttf",
+  "./fonts/merriweather-fontface/Merriweather-BoldItalic.ttf",
+  "./fonts/merriweather-fontface/Merriweather-HeavyItalic.ttf",
+  "./fonts/merriweather-fontface/Merriweather-Italic.ttf",
+  "./fonts/merriweather-fontface/Merriweather-Light.ttf",
+  "./fonts/merriweather-fontface/Merriweather-LightItalic.ttf",
+  "./fonts/merriweather-fontface/Merriweather-Regular.ttf"
+	],
+  "licenses": [
+    {
+      "covers": "software",
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    {
+      "covers": "fonts",
+      "type": "OFL-1.1",
+      "url": "http://scripts.sil.org/OFL"
+    }
+  ],
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "./deploy.sh",
+    "./init.sh"
+  ]
+}
